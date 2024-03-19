@@ -3,7 +3,7 @@ import websiteImg2 from '../assets/food-ecommerce.jpg';
 import websiteImg3 from '../assets/website-blog.jpg';
 export default function Projects(){
   return (
-    <section className="flex flex-col py-20 px-5 justify-center bg-primary text-white">
+    <section id='projects' className="flex flex-col py-20 px-5 justify-center bg-primary text-white">
         <div className="w-full">
             <div className="flex flex-col px-10 py-5">
                 <h1 className="text-3xl  border-b-4 border-secondary mb-5 w-[120px] font-bold">Projects</h1>
