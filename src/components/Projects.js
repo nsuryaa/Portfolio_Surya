@@ -2,6 +2,28 @@ import websiteImg1 from '../assets/ecommerce-websites.jpg';
 import websiteImg2 from '../assets/food-ecommerce.jpg';
 import websiteImg3 from '../assets/website-blog.jpg';
 export default function Projects(){
+
+    const config ={
+        projects:[
+            {
+                image:websiteImg1,
+                description:'A Ecommerce Website. Built with MERN Stack.',
+                link:''
+            },
+            {
+                image:websiteImg2,
+                description:'Food Ecommerce website like Swiggy, Built with Angular & .Net',
+                link:''
+            },
+            {
+                image:websiteImg3,
+                description:'Basic Blog Website. Built with Next JS and MongoDB',
+                link:''
+            }
+        ]
+    }
+
+
   return (
     <section id='projects' className="flex flex-col py-20 px-5 justify-center bg-primary text-white">
         <div className="w-full">
@@ -12,24 +34,17 @@ export default function Projects(){
         </div>
         <div className="w-full">
             <div className='flex flex-col md:flex-row px-10 gap-5'>
-                <div className='relative'>
-                    <img className='h-[200px] w-[500px]' src={websiteImg1}/>
-                    <div className='project-desc'>
-                        <p className='text-center px-5 py-5'>A Ecommerce Website. Built with MERN Stack.</p>
+                {config.projects.map((project)=>(
+                    <div className='relative'>
+                        <img className='h-[200px] w-[500px]' src={project.image}/>
+                        <div className='project-desc'>
+                            <p className='text-center px-5 py-5'>{project.description}</p>
+                            <div className='flex justify-center'>
+                                <a className='btn' target='_blank' href={project.link}>View Project</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className='relative'>
-                    <img className='h-[200px] w-[500px]' src={websiteImg2}/>
-                    <div className='project-desc'>
-                        <p className='text-center px-5 py-5'>Food Ecommerce website like Swiggy, Built with Angular & .Net</p>
-                    </div>
-                </div>
-                <div className='relative'>   
-                    <img className='h-[200px] w-[500px]' src={websiteImg3}/>
-                    <div className='project-desc'>
-                        <p className='text-center px-5 py-5'>Basic Blog Website. Built with Next JS and MongoDB</p>
-                    </div>
-                </div>
+                ))}
             </div>
         </div>
     </section>
